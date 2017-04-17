@@ -1,11 +1,11 @@
 FROM java:8
 MAINTAINER des@drury-family.com
 
-ENV OPENDJ_URL=http://maven.forgerock.org/repo/snapshots/org/forgerock/opendj/opendj3-server-dev/3.0.0-SNAPSHOT/opendj3-server-dev-3.0.0-20150211.174712-258.zip
+ENV OPENDJ_URL=https://github.com/OpenRock/OpenDJ/releases/download/3.0.0/OpenDJ-3.0.0.zip
 
 WORKDIR /opt
 
-RUN curl $OPENDJ_URL -o opendj.zip; \
+RUN curl -L $OPENDJ_URL -o opendj.zip; \
     unzip opendj.zip; \
     rm opendj.zip
 
